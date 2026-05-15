@@ -29,6 +29,7 @@ export default function Sidebar({ setCanvas, presets, applyPreset }: Readonly<Pr
         </div>
         <div>
           <button
+            type="button"
             draggable
             onDragStart={(e) => handleDragStart(e, 'fan')}
             onClick={() => setCanvas("fan")}
@@ -40,6 +41,7 @@ export default function Sidebar({ setCanvas, presets, applyPreset }: Readonly<Pr
         </div>
         <div>
           <button
+            type="button"
             draggable
             onDragStart={(e) => handleDragStart(e, 'light')}
             onClick={() => setCanvas("light")}
@@ -54,6 +56,7 @@ export default function Sidebar({ setCanvas, presets, applyPreset }: Readonly<Pr
           {presets && presets.length > 0 ? (
             presets.map((pr) => (
               <button
+                type="button"
                   key={pr.id}
                   draggable
                   onDragStart={(e) => { e.dataTransfer.setData('application/x-preset', JSON.stringify(pr)); e.dataTransfer.effectAllowed = 'copy' }}
@@ -65,7 +68,7 @@ export default function Sidebar({ setCanvas, presets, applyPreset }: Readonly<Pr
                 </button>
             ))
           ) : (
-            <button disabled className="bg-transparent w-11/12 p-2 mt-2 rounded-lg border border-[#364153] text-[#E5E7EB]/40">
+            <button type="button" disabled className="bg-transparent w-11/12 p-2 mt-2 rounded-lg border border-[#364153] text-[#E5E7EB]/40">
               Nothing added yet
             </button>
           )}

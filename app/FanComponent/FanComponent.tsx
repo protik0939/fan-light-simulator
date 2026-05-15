@@ -13,9 +13,8 @@ export default function FanComponent({ startFan, onStartFanChange, speed, onSpee
   return (
     <div className="flex flex-col justify-between items-center h-full">
       <div
-        style={{
-          animation: startFan ? `spin ${1 / speed}s linear infinite` : "none",
-        }}
+        className={startFan ? 'animate-spin' : ''}
+        style={startFan ? { animationDuration: `${1 / speed}s`, transformOrigin: '50% 50%' } : { transformOrigin: '50% 50%' }}
       >
         <FanIcon />
       </div>
